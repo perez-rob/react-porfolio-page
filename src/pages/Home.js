@@ -1,5 +1,7 @@
 import React from "react";
 import AboutMe from "../components/AboutMe";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Parallax from "../components/Parallax";
 import Subheader from "../components/Subheader";
@@ -17,6 +19,8 @@ export default function Home() {
         <Parallax imgSrc={bg2} />
         <Work />
         <Parallax imgSrc={bg1} />
+        <Contact />
+        <Footer />
       </main>
     </div>
   );

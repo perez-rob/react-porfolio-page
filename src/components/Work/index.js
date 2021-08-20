@@ -17,28 +17,28 @@ export default function Work() {
   });
   return (
     <section id="projects">
-      <div class="section-title">
+      <div className="section-title">
         <h2>Projects</h2>
       </div>
 
-      <div id="project-modal" class="modal modal-fixed-footer">
-        <div class="modal-content">
-          <a href="#!" class="modal-close right">
+      <div id="project-modal" className="modal modal-fixed-footer">
+        <div className="modal-content">
+          <a href="#!" className="modal-close right">
             <i
               id="modal-close-btn"
-              class="material-icons right"
+              className="material-icons right"
               onmouseover="this.innerHTML='cancel'"
               onmouseout="this.innerHTML='highlight_off'"
             >
               highlight_off
             </i>
           </a>
-          <h4 class="center">Modal Header</h4>
+          <h4 className="center">Modal Header</h4>
           <img src="" alt="" />
           <p>A bunch of text</p>
         </div>
 
-        <div class="modal-footer">
+        <div className="modal-footer">
           <div id="mod-foot">
             <a id="deploy-link" target="blank" href="">
               Deployed Project
@@ -50,36 +50,36 @@ export default function Work() {
         </div>
       </div>
 
-      <div id="projects-cont" class="row container">
-        <div class="col s12">
-          <ul class="tabs">
-            <li class="tab col m3 s12">
-              <a class="active" href="#febe">
+      <div id="projects-cont" className="row container">
+        <div className="col s12">
+          <ul className="tabs">
+            <li className="tab col m3 s12">
+              <a className="active" href="#febe">
                 FeBe
               </a>
             </li>
-            <li class="tab col m3 s12">
+            <li className="tab col m3 s12">
               <a href="#crypto-cards">Crypto</a>
             </li>
-            <li class="tab col m3 s12">
+            <li className="tab col m3 s12">
               <a href="#weather-dash">Weather</a>
             </li>
-            <li class="tab col m3 s12">
+            <li className="tab col m3 s12">
               <a href="#work-day">Schedule</a>
             </li>
           </ul>
         </div>
-        <div id="febe" class="project-pics col s12">
-          <figure class=""></figure>
+        <div id="febe" className="project-pics col s12">
+          <figure className=""></figure>
         </div>
-        <div id="crypto-cards" class="project-pics col s12">
-          <figure class=""></figure>
+        <div id="crypto-cards" className="project-pics col s12">
+          <figure className=""></figure>
         </div>
-        <div id="weather-dash" class="project-pics col s12">
-          <figure class=""></figure>
+        <div id="weather-dash" className="project-pics col s12">
+          <figure className=""></figure>
         </div>
-        <div id="work-day" class="project-pics col s12">
-          <figure class=""></figure>
+        <div id="work-day" className="project-pics col s12">
+          <figure className=""></figure>
         </div>
       </div>
     </section>
