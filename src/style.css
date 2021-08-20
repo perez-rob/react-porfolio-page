@@ -1,0 +1,702 @@
+/* font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Sen', sans-serif; */
+/*  family=Inknut+Antiqua&family=Alegreya+Sans+SC:ital,wght@1,800;1,900  */
+
+/* Document level adjustments */
+html {
+  font-size: 16px;
+  /* min-width: 100vw;
+    width: 100vw; */
+  /* display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas: 
+            "body"; */
+}
+@media (max-width: 993px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Modules will scale with document */
+.header {
+  font-size: 1.5rem;
+}
+.footer {
+  font-size: 0.75rem;
+}
+.sidebar {
+  font-size: 0.85rem;
+}
+
+/* Main CSS starts here */
+
+:root {
+  --color1: #05519c;
+  /* --color1: #075BAF; */
+  --color2: #2f8ae5;
+  --color3: #7cb6f0;
+  --color4: #e5eef8;
+  --color5: #ffe4e4;
+  --color-wb: #d7e6f0;
+}
+
+body {
+  /* min-width: 100vw;
+    width: 100vw; */
+  grid-area: body !important;
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: var(--color4);
+  /* display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas: 
+                "header"
+                "main"
+                "footer" !important; */
+}
+
+header {
+  grid-area: header !important;
+}
+
+main {
+  grid-area: main !important;
+  position: relative;
+  z-index: 1;
+  background-color: var(--color4);
+}
+
+main::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -2;
+  background-image: url("./images/backgrounds/cloth.jpg");
+  background-size: cover;
+  background-color: var(--color3);
+  opacity: 0.15;
+}
+
+/* main::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: var(--color3);
+  opacity: 0.1;
+} */
+
+.nav-wrapper ul {
+  margin-right: 40px;
+}
+
+.nav-wrapper ul li a {
+  margin: 0 0.8em;
+}
+
+.nav-icon {
+  width: 30px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.nav-text {
+  position: relative;
+  font-size: 1.6rem;
+}
+
+/* CHANGE FONT*/
+#page-title {
+  background-color: var(--color2);
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-style: italic;
+  font-variant: small-caps;
+  font-size: 5rem;
+  font-weight: 900;
+  border-radius: 0.4rem;
+  padding-left: 4rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  position: relative;
+  right: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+  line-height: 1;
+  color: var(--color5);
+  pointer-events: none;
+}
+
+#subheader {
+  width: 100%;
+  min-height: 7rem;
+  padding: 1.5em 3em 1em 0.2em;
+  margin-bottom: 0.2em;
+  color: var(--color5);
+  background-image: linear-gradient(var(--color2) 0%, transparent 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 1s ease-out;
+  grid-area: subheader;
+  position: relative;
+  opacity: 1;
+}
+
+h3 {
+  font-size: 1.9em;
+  font-family: "Sen", sans-serif;
+}
+
+/* #subtitle {
+  transition: all 0.8s ease-out;
+  position: absolute;
+  color: var(--color4);
+  font-style: italic;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 2.7em;
+} */
+
+/*this is the text in the subheader that is only visible after the transition,
+which is why its opacity is set to 0 */
+#subtitle2 {
+  transition: all 0.8s ease-in;
+  opacity: 0;
+  color: var(--color2);
+  position: absolute;
+  margin-top: 1em;
+  left: 50%;
+  transform: translate(-60%);
+  top: -1.5em;
+}
+
+#subtitle2 h3 {
+  /* transform: skew(10deg); */
+  font-style: italic;
+}
+
+header:hover + main #subheader {
+  box-shadow: inset 0em -1.8em 1em 5em var(--color4);
+  opacity: 0;
+}
+
+/* header:hover + main #subtitle{
+  opacity: 0 ;
+} */
+header:hover + main #subtitle2 {
+  opacity: 1;
+}
+
+h2 {
+  color: var(--color4);
+  font-family: "Sen", sans-serif;
+  font-size: 2.5rem !important;
+  line-height: 3;
+  font-weight: 600;
+  font-variant: small-caps;
+  margin: 0;
+}
+
+section {
+  background-color: transparent;
+}
+
+.section-title {
+  width: fit-content;
+  padding: 0 4em 0 2em;
+  background-color: var(--color2);
+  border-bottom-right-radius: 2em;
+  transition: 0.6s all;
+}
+
+section:hover > .section-title {
+  padding: 0 6em 0 12em;
+}
+
+#welcome {
+  margin-top: 2em;
+}
+
+#welcome .section-title {
+  border-top-right-radius: 2em;
+}
+
+#about-me-cont {
+  position: relative;
+}
+
+#about-me-cont p {
+  font-size: 1.1em;
+  line-height: 1.75;
+  font-weight: 700;
+  font-style: italic;
+}
+
+#read-more-btn {
+  color: var(--color1);
+  transition: 0.2s all ease-in;
+}
+
+#read-more-btn:hover {
+  color: var(--color3);
+  cursor: pointer;
+}
+
+#personal-pic {
+  position: absolute;
+  /* transform: translate( 0, -50%); */
+  top: 7%;
+  right: 0;
+}
+
+#personal-pic img {
+  width: 15em;
+  height: auto;
+  margin-right: 3em;
+  border-radius: 50%;
+}
+
+#projects .section-title {
+  margin-bottom: 3em;
+}
+
+.tabs {
+  background-color: transparent;
+}
+
+.tabs .tab a {
+  color: rgba(7, 91, 175, 0.7);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  background-color: rgba(47, 138, 229, 0.2);
+}
+
+.tabs .tab a:hover,
+.tabs .tab a.active {
+  background-color: transparent;
+  color: var(--color1);
+}
+
+.tabs .indicator {
+  background-color: var(--color3);
+  height: 6px;
+}
+
+.project-pics {
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+  position: relative;
+  z-index: 1;
+}
+
+.project-pics::before {
+  position: absolute;
+  content: "";
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 1em;
+  background-color: var(--color2);
+  z-index: -1;
+  transition: opacity 0.35s linear;
+  opacity: 0;
+}
+
+.project-pics::after {
+  position: absolute;
+  content: "View Project Details";
+  cursor: pointer;
+  font-size: 3em;
+  color: var(--color5);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  border-radius: 1em;
+  z-index: -1;
+  transition: opacity 0.35s linear;
+  opacity: 0;
+}
+
+.project-pics:hover::before {
+  opacity: 0.6;
+}
+
+.project-pics:hover::after {
+  opacity: 1;
+}
+
+#crypto-cards {
+  background-image: url("./images/ProjectPics/Crypto-Cards-1.png");
+  background-size: 100% 100%;
+}
+
+#weather-dash {
+  background-image: url("./images/ProjectPics/Weather-Dash-1.png");
+  background-size: 100% 100%;
+}
+
+#work-day {
+  background-image: url("./images/ProjectPics/Work-Day-1.png");
+  background-size: 100% 100%;
+}
+
+#febe {
+  background-image: url("./images/ProjectPics/febe.png");
+  background-size: 100% 100%;
+}
+
+#project-modal {
+  max-height: 90%;
+  height: 90%;
+}
+
+#modal-close-btn {
+  position: fixed;
+  right: 4%;
+  color: var(--color1);
+  font-size: 1.8em;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content h4 {
+  color: var(--color1);
+  margin: 0.5em 0 1em 0;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.modal-content p {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-style: oblique;
+  font-family: "Sen", sans-serif;
+}
+
+.modal-content img {
+  width: 90%;
+  align-self: center;
+  margin: 1.5em 0;
+}
+
+.modal-footer {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color3) !important;
+}
+
+#mod-foot {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-footer a {
+  font-size: 1.5em;
+  color: var(--color5);
+  transition: 0.3s all ease-in;
+}
+
+.modal-footer a:hover {
+  color: var(--color1) !important;
+  box-shadow: 0 8px 5px -5px var(--color2);
+}
+
+#contact-me-cont {
+  margin-top: 3em;
+}
+
+#contact-me-cont .section-contents {
+  text-align: center;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+  padding-top: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+#contact-me-cont .section-contents a {
+  color: var(--color2);
+  font-weight: 600;
+  transition: 0.3s all ease-in;
+}
+
+#contact-me-cont .section-contents a:hover {
+  color: var(--color1);
+  box-shadow: 0 8px 5px -5px var(--color2);
+}
+
+footer {
+  width: 100%;
+  min-height: 3rem;
+  bottom: 0;
+  background-image: linear-gradient(var(--color4) 0%, var(--color2) 100%);
+  transition: all 0.4s ease-out;
+  grid-area: footer !important;
+}
+/* gives the footer some animation effects*/
+footer:hover {
+  box-shadow: 0em 0em 1em 0.7em var(--color1);
+  background-image: linear-gradient(var(--color3) 0%, var(--color3) 100%);
+}
+
+/* --- Materialize Customizations --- */
+nav {
+  height: 120px;
+  line-height: 120px;
+}
+
+.nav-wrapper {
+  background-color: var(--color1);
+}
+
+.dropdown-content {
+  background-color: var(--color1);
+}
+
+.dropdown-content li a {
+  color: var(--color5);
+  font-size: 1.3em;
+}
+
+/* set different height for first parallax*/
+.parallax-container {
+  height: 100px;
+  position: relative;
+  z-index: 3;
+}
+
+#parallax-2 {
+  height: 100px;
+  position: relative;
+  z-index: 3;
+}
+
+div.tabs-content.carousel.carousel-slider {
+  height: 600px !important;
+}
+
+.input-field input {
+  font-size: 1.3em !important;
+}
+.input-field textarea {
+  font-size: 1.3em !important;
+}
+/* label color */
+.input-field label {
+  font-size: 1.2em;
+  color: #000;
+}
+/* label focus color */
+.input-field input:focus + label {
+  color: var(--color2) !important;
+}
+/* label underline focus color */
+.input-field input:focus {
+  border-bottom: 1px solid var(--color2) !important;
+  box-shadow: 0 1px 0 0 var(--color2) !important;
+}
+
+/* label focus color */
+.input-field textarea:focus + label {
+  color: var(--color2) !important;
+}
+/* label underline focus color */
+.input-field textarea:focus {
+  border-bottom: 1px solid var(--color2) !important;
+  box-shadow: 0 1px 0 0 var(--color2) !important;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: var(--color2) !important;
+}
+
+.btn[type="submit"] {
+  color: var(--color5);
+  background-color: var(--color2);
+  font-size: 1.2em;
+}
+
+input + label {
+  pointer-events: none;
+}
+
+input + label * {
+  pointer-events: all;
+}
+
+textarea + label {
+  pointer-events: none;
+}
+
+textarea + label * {
+  pointer-events: all;
+}
+
+#toast-container {
+  min-width: 8%;
+  top: 50%;
+  right: 50%;
+}
+
+.toast {
+  background-color: var(--color1);
+  color: var(--color5);
+}
+
+@media screen and (max-width: 875px) {
+  #personal-pic img {
+    width: 13em;
+    height: auto;
+    margin-right: 3em;
+    border-radius: 50%;
+  }
+
+  nav {
+    min-height: 222px;
+  }
+
+  .nav-wrapper {
+    min-height: 222px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #personal-pic img {
+    width: 11em;
+    height: auto;
+    margin-right: 3em;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #personal-pic img {
+    width: 10em;
+    height: auto;
+    margin-right: 3em;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #personal-pic {
+    position: static;
+    transform: translate(0, 0);
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #personal-pic img {
+    width: 13em;
+    height: auto;
+    margin-right: 3em;
+    border-radius: 50%;
+  }
+
+  .nav-icon {
+    width: 26px;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  nav {
+    min-height: 212px;
+  }
+
+  .nav-wrapper {
+    min-height: 212px;
+  }
+
+  #contact-me-cont .section-contents {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .nav-icon {
+    width: 24px;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  /* .nav-text {
+    font-size: 1em;
+  } */
+
+  .nav-wrapper ul {
+    margin-right: 15px;
+  }
+
+  .nav-wrapper ul li a {
+    margin: 0 0.2em;
+  }
+
+  #contact-me-cont .section-contents {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .nav-icon {
+    width: 24px;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  .nav-text {
+    font-size: 1.4em;
+  }
+
+  .nav-wrapper ul {
+    margin-right: 7px;
+  }
+
+  .nav-wrapper ul li a {
+    margin: 0 0.2em;
+  }
+
+  nav {
+    height: 120px;
+    line-height: 120px;
+    min-height: 210px;
+  }
+
+  .nav-wrapper {
+    min-height: 210px;
+  }
+}
