@@ -2,7 +2,7 @@ import React from "react";
 import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import Parallax from "../components/Parallax";
 import Subheader from "../components/Subheader";
 import Work from "../components/Work";
@@ -12,7 +12,7 @@ import bg1 from "../images/backgrounds/test-bg-1.png";
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Navbar />
       <main>
         <Subheader />
         <AboutMe />

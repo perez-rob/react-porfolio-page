@@ -1,6 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useRef, useState } from "react";
+
+import profPic1 from "../../images/prof-pic1.jpg";
+import profPic2 from "../../images/prof-pic2.jpg";
 
 export default function AboutMe() {
+  const [profPic, setProfPic] = useState(profPic2);
+  const readMoreBtn = useRef();
+  const moreText = useRef();
+  const handleReadMore = () => {
+    readMoreBtn.current.className = "hide";
+    moreText.current.className = "";
+  };
+
   return (
     <section id="welcome">
       <div className="section-title">
@@ -10,10 +21,10 @@ export default function AboutMe() {
       <div id="about-me-cont" className="row container">
         <div id="personal-pic" className="col s12 m3 valign-wrapper">
           <img
-            src="/images/prof-pic2.jpg"
-            onmouseover="this.src='/images/prof-pic1.jpg'"
-            onmouseout="this.src='/images/prof-pic2.jpg'"
-            alt="Profile-Picture"
+            src={profPic}
+            onMouseOver={() => setProfPic(profPic1)}
+            onMouseOut={() => setProfPic(profPic2)}
+            alt="Profile-Pic"
           />
         </div>
         <div className="section-contents col s12 m9">
@@ -35,24 +46,29 @@ export default function AboutMe() {
             represent.
           </p>
           <p className="">
-            <span id="read-more-btn" className="">
+            <span
+              id="read-more-btn"
+              ref={readMoreBtn}
+              onClick={handleReadMore}
+              className=""
+            >
               (read more)
             </span>
-            <span id="read-more" className="hide">
-              &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp For every project completed
-              thus far, I have not only met, but exceeded the acceptance
-              criteria. I always add to or improve upon the basic, required
-              functionality so that the user can both do more with and have a
-              more satisfying experience with my applications. I consistently go
-              the extra mile with my CSS stylings to ensure my projects are
-              professional and aesthetically appealing. While most of the
-              projects below are quite common to see from bootcamp developers,
-              you will notice that my versions indicate a developer who puts in
-              the extra time and effort to make a superior product, with an
-              emphasis on enhanced functionality and ease-of-use. By constantly
-              striving to take my projects to the next level, I have learned how
-              to provide the user a better, more complete experience and, in the
-              process, have provided myself with additional learning
+            <span id="read-more" ref={moreText} className="hide">
+              {"\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0"} For every project
+              completed thus far, I have not only met, but exceeded the
+              acceptance criteria. I always add to or improve upon the basic,
+              required functionality so that the user can both do more with and
+              have a more satisfying experience with my applications. I
+              consistently go the extra mile with my CSS stylings to ensure my
+              projects are professional and aesthetically appealing. While most
+              of the projects below are quite common to see from bootcamp
+              developers, you will notice that my versions indicate a developer
+              who puts in the extra time and effort to make a superior product,
+              with an emphasis on enhanced functionality and ease-of-use. By
+              constantly striving to take my projects to the next level, I have
+              learned how to provide the user a better, more complete experience
+              and, in the process, have provided myself with additional learning
               opportunities through these extra challenges. I hope you enjoy the
               following examples of my work, and, if you have a dream for an
               application, I hope that you will contact me to help you build it!

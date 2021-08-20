@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import M from "materialize-css";
-import "../../style.module.css";
 
-export default function Header() {
+import linkedInLogo from "../../images/lin-icon.png";
+import githubLogo from "../../images/git-icon.png";
+
+export default function Navbar() {
   useEffect(() => {
     var elems = document.querySelectorAll(".dropdown-trigger");
     M.Dropdown.init(elems, {
@@ -24,26 +26,18 @@ export default function Header() {
 
       <nav>
         <div className="nav-wrapper">
-          <a id="page-title" href="#" className="left">
+          <a id="page-title" href="#!" className="left">
             Rob Perez
           </a>
           <ul id="nav-mobile" className="right">
             <li>
               <a href="https://www.linkedin.com/in/r-perez/" target="blank">
-                <img
-                  className="nav-icon"
-                  src="/images/lin-icon.png"
-                  alt="LinkedIn"
-                />
+                <img className="nav-icon" src={linkedInLogo} alt="LinkedIn" />
               </a>
             </li>
             <li>
               <a href="https://github.com/perez-rob" target="blank">
-                <img
-                  className="nav-icon"
-                  src="/images/git-icon.png"
-                  alt="GitHub"
-                />
+                <img className="nav-icon" src={githubLogo} alt="GitHub" />
               </a>
             </li>
             <li>

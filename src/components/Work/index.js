@@ -40,10 +40,10 @@ export default function Work() {
 
         <div className="modal-footer">
           <div id="mod-foot">
-            <a id="deploy-link" target="blank" href="">
+            <a id="deploy-link" target="blank" href="#!">
               Deployed Project
             </a>
-            <a id="git-link" target="blank" href="">
+            <a id="git-link" target="blank" href="#!">
               Project GitHub
             </a>
           </div>
