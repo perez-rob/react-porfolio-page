@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import M from "materialize-css";
+import "../../style.module.css";
 
 export default function Header() {
   useEffect(() => {
     var elems = document.querySelectorAll(".dropdown-trigger");
-    var instances = M.Dropdown.init(elems, {
+    M.Dropdown.init(elems, {
       coverTrigger: false,
       constrainWidth: false,
       alignment: "right",
