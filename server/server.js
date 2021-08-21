@@ -2,6 +2,7 @@
 const path = require("path");
 const express = require("express");
 var compression = require("compression");
+const cors = require("cors");
 
 const app = express();
 app.use(compression());
@@ -12,12 +13,13 @@ require("dotenv").config();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/index.html"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 app.post("/", async (req, res) => {

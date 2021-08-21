@@ -90,13 +90,8 @@ export default function Work() {
       >
         <div ref={modalContent} className="modal-content">
           <a href="#!" className="modal-close right">
-            <i
-              id="modal-close-btn"
-              className="material-icons right"
-              onmouseover="this.innerHTML='cancel'"
-              onmouseout="this.innerHTML='highlight_off'"
-            >
-              highlight_off
+            <i id="modal-close-btn" className="material-icons right">
+              cancel
             </i>
           </a>
           <h4 ref={modalTitle} className="center">

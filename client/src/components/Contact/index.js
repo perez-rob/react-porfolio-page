@@ -12,7 +12,26 @@ export default function Contact() {
 
   const handleEmail = async (event) => {
     event.preventDefault();
-    console.log(nameEl.current.value);
+    let formData = {
+      name: nameEl.current.value,
+      email: emailEl.current.value,
+      message: messageEl.current.value,
+    };
+
+    const response = await fetch(`${process.env.PORT}/`, {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      M.toast({ html: "Email Sent!" });
+      nameEl.current.value = "";
+      emailEl.current.value = "";
+      messageEl.current.value = "";
+    } else {
+      M.toast({ html: "Failed to Send" });
+    }
   };
   return (
     <section id="contact">
