@@ -18,7 +18,7 @@ export default function Contact() {
       message: messageEl.current.value,
     };
 
-    const response = await fetch(`${process.env.PORT}/`, {
+    const response = await fetch("/", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: { "Content-Type": "application/json" },
