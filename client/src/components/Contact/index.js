@@ -1,11 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import M from "materialize-css";
 
-export default function Parallax(props) {
+export default function Contact() {
   useEffect(() => {
     var elems = document.querySelectorAll("textarea#textarea2");
     M.CharacterCounter.init(elems);
   });
+  const nameEl = useRef();
+  const emailEl = useRef();
+  const messageEl = useRef();
+
+  const handleEmail = async (event) => {
+    event.preventDefault();
+    console.log(nameEl.current.value);
+  };
   return (
     <section id="contact">
       <div className="section-title">
@@ -13,17 +21,27 @@ export default function Parallax(props) {
       </div>
       <div id="contact-me-cont">
         <div className="row container">
-          <form id="contact-form" className="col s12">
+          <form id="contact-form" onSubmit={handleEmail} className="col s12">
             <div className="row">
               <div className="input-field col s6">
                 <i className="material-icons prefix">account_circle</i>
-                <input id="name" type="text" className="validate" />
-                <label for="name">Name</label>
+                <input
+                  id="name"
+                  ref={nameEl}
+                  type="text"
+                  className="validate"
+                />
+                <label htmlFor="name">Name</label>
               </div>
               <div className="input-field col s6">
                 <i className="material-icons prefix">email</i>
-                <input id="email" type="email" className="validate" />
-                <label for="email">Email</label>
+                <input
+                  id="email"
+                  ref={emailEl}
+                  type="email"
+                  className="validate"
+                />
+                <label htmlFor="email">Email</label>
               </div>
             </div>
             <div id="text-and-submit" className="row valign-wrapper">
@@ -31,10 +49,11 @@ export default function Parallax(props) {
                 <i className="material-icons prefix">mode_edit</i>
                 <textarea
                   id="textarea2"
+                  ref={messageEl}
                   className="materialize-textarea"
                   data-length="200"
                 ></textarea>
-                <label for="textarea2">Message</label>
+                <label htmlFor="textarea2">Message</label>
               </div>
               <button
                 className="

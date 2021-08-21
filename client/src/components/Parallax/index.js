@@ -7,8 +7,8 @@ export default function Parallax(props) {
     M.Parallax.init(elems, {});
   });
   return (
-    <div class="parallax-container">
-      <div class="parallax">
+    <div className="parallax-container">
+      <div className="parallax">
         <img src={props.imgSrc} alt="code-background" />
       </div>
     </div>
